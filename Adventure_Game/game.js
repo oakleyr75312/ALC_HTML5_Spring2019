@@ -27,22 +27,20 @@ Multiline comment
                         //}
 
 var inventory = {
-    coin:1000,
-    bread:0,
-    sword:0,
-    map:0,
+    coins: 0,
+    cloak: 0,
 }
-
-
-
-
 
 Game();
 
 function Game(){
     
-    alert("Stolen Island!");
+    var islandNames = ["Island"];
+    
+    alert("Stolen "+islandNames[0]+"!" );
+    
     var playerName = prompt("What is your name?");
+    
     alert("Welcome to the Stolen Island "+ playerName);
     
     Boat();
@@ -52,12 +50,10 @@ function Game(){
         
         if(boat == "look at the island" || boat == "island"){
             
-            var IslandLook = prompt("You see a small island with only 3 trees to the north. You see a small box poking out of the sand. \n -look in the water \n -look in the boat");
+            var islandLook = confirm("You see a small island with only 3 trees to the north. You see a small box poking out of the sand.");
+            Boat();
         }
         
-        
-        
-    
         else if(boat == "look in the water" || boat == "water"){
             // Fall asleep because of the water
             alert("You look over at the water and while you watch the waves you start to fall asleep.");
@@ -71,42 +67,37 @@ function Game(){
                 alert("Game over!");
             }
         }
+        
+        
+        
+    else if(boat == "look in the boat" || boat == "boat"){
+            
+            var BoatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -keep it").toLowerCase();
+            
+    if(boat == "keep it" || "keep"){
+                alert("You got a cloak!");
     }
-        
-        
-        
-        else if(boat == "look in the boat" || boat == "boat"){
-            
-            var BoatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -pick it up \n -throw it in the water \n -leave it in the boat.").toLowerCase();
-            
-            if(boat == "pick it up" || "keep"){
-                alert("YOU GOT A CLOAK!");
-            }
-            
-            else if(boat == "throw it in the water" || "water"){
-                alert("The cloak hits the water and explodes throwing you and your boat into a tree.");
-            }
-            else if(boat == "leave it in the boat" || "leave it"){
-                alert("You left it in the boat.");
-            }
-        }
-        
-        
-               
-        
-        
         
             else{
                 alert("I don't know what "+boat+" is!");
                 boat();
-        }
+            }
+            }
+    }
+        
     
-    function Water(){
+      
+    
+    function Island(){
         
-        var water1 = prompt("You enter a dank swamp. \n -swim \n -follow path").toLowerCase();
+        var island1 = prompt("You get on to the island \n -go to the box \n -go to the trees").toLowerCase();
         
-        if(water1 == "swim" || water1 == "go swimming"){
-            alert("You get eaten by a swamp monster...Game Over!");
+        if(island1 == "go to the box" || water1 == "box"){
+            var island2 prompt("You start to walk and every time you step it starts to move farther into the sand.");
+            
+        
+        
+        
         
         }
         
