@@ -25,16 +25,22 @@ Multiline comment
                             //alert("You have "+inventory.coins+" coins remaining");
                             //Blacksmith();
                         //}
-
+var lives = {
+    lifeLeft: 100,
+    
+}
 var inventory = {
-    coins: 0,
     cloak: 0,
+    glasses: 0,
+    pocketNote: 1,
+    
+    
 }
 
 Game();
 
 function Game(){
-    
+//Island();
     var islandNames = ["Island"];
     
     alert("Stolen "+islandNames[0]+"!" );
@@ -72,11 +78,17 @@ function Game(){
         
     else if(boat == "look in the boat" || boat == "boat"){
             
-            var BoatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -keep it").toLowerCase();
+            var boatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -keep it \n -leave it \n -throw it in the water").toLowerCase();
             
     if(boat == "keep it" || "keep"){
                 alert("You got a cloak!");
+                inventory.cloak = inventory.cloak + 1;
+        Island();
     }
+    else if(boat == "leave it"){
+        alert("You left it!");
+
+    }   
         
             else{
                 alert("I don't know what "+boat+" is!");
@@ -89,68 +101,55 @@ function Game(){
       
     
     function Island(){
-        
-        var island1 = prompt("You get on to the island \n -go to the box \n -go to the trees").toLowerCase();
-        
-        if(island1 == "go to the box" || water1 == "box"){
-            var island2 prompt("You start to walk and every time you step it starts to move farther into the sand.");
-            
-        
-        
-        
-        
+      // You can only get to this if you take the cloak.  
+        var island1 = prompt("When you take the cloak the boat disapers and you end up on the sand. \n -go to the box \n -go to the trees").toLowerCase();
+        //Go to the trees
+        if(island1 == "go to the trees" || island1 == "trees"){
+            var islandTrees = prompt("")
         }
+        //They go to the box
+        else if(island1 == "go to the box" || water1 == "box"){
+            var island2 = prompt("You start to walk and every time you step it starts to move farther into the sand. /n -run /n keep walking").toLowerCase;
         
-        else if(water1 == "follow path" || water1 == "follow"){
-            var waterpath = prompt(" -eat lunch \n -go north");
-            // Eat lunch event
-            if (waterPath == "eat lunch"){
-                alert("You eat your lunch, it was poisioned...how sad! Game Over!");
+            if(island2 == "Run" ){
+                var island3 = prompt("You barely made it. You pushed away the sand and saw a metal trap door, you need a key.");
             }
-            // Go north to castle event
-            else if(waterPath == "noth"){
-                alert("You travel north");
-                Water();
+            else if(island2 == "keep walking" || "walk"){
+                let island3 = prompt("You missed the box it sinked in the sand too fast.")
             }
-        }
         
-        else{
-            alert("I don't understand " + water1)
-            water().toLowerCase();
-            
+        
         }
-    
-    
+       
     }
     
     
         
-        function Castle(){
-            var insideCastle = prompt("- upstairs \n - downstairs /n - courtyard /n - balcony /n look").toLowerCase();
+        //function Castle(){
+            //var insideCastle = prompt("- upstairs \n - downstairs /n - courtyard /n - balcony /n look").toLowerCase();
             
-            switch(insideCastle){
-                case "upstairs":
-                    var upstairs = prompt("You walk a long flight of stairs to the top floor of the castle.");
+           // switch(insideCastle){
+                //case "upstairs":
+                   //var upstairs = prompt("You walk a long flight of stairs to the top floor of the castle.");
                     
-                    Castle();
-                break;
-                case "downstairs":
-                    prompt("You go downstairs");
+                   // Castle();
+                //break;
+               // case "downstairs":
+                    //prompt("You go downstairs");
                 
-                break;
-                case "courtyard":
-                    prompt("You go courtyard");
+                //break;
+                //case "courtyard":
+                    //prompt("You go courtyard");
                 
-                break;
-                case "balcony":
-                    prompt("You go balcony");
+                //break;
+                //case "balcony":
+                    //prompt("You go balcony");
                 
-                break;
-                default:
-                    alert("I don't know what "+insideCastle+" is!");
-                break;
+                //break;
+                //default:
+                    //alert("I don't know what "+insideCastle+" is!");
+                //break;
               
-            }
+            //}
         }
-}
  
