@@ -25,14 +25,26 @@ Multiline comment
                             //alert("You have "+inventory.coins+" coins remaining");
                             //Blacksmith();
                         //}
+
+
 var lives = {
     lifeLeft: 100,
-    
 }
+
+var checkInv = function(){
+    alert("Gold Coins: "+inventory.coins.gold+"\n Silver coins: " +inventory.coins.silver+"\n Copper coins: "+inventroy.coins.copper);
+}
+
+
 var inventory = {
-    cloak: 0,
+    coins:{
+        gold:10,
+        silver:12,
+        copper:2000,
+    },
     glasses: 0,
     pocketNote: 1,
+    log: 0,
     
     
 }
@@ -102,28 +114,35 @@ function Game(){
     
     function Island(){
       // You can only get to this if you take the cloak.  
-        var island1 = prompt("When you take the cloak the boat disapers and you end up on the sand. \n -go to the box \n -go to the trees").toLowerCase();
+        var island1 = prompt("When you take the cloak the boat disapers and you end up on the sand. \n -go to the trees \n -go to the box").toLowerCase();
         //Go to the trees
         if(island1 == "go to the trees" || island1 == "trees"){
-            var islandTrees = prompt("")
+            var islandTrees = prompt("You start to walk to the trees at the other side of the island You get to the first tree")
+            Trees();
         }
         //They go to the box
-        else if(island1 == "go to the box" || water1 == "box"){
-            var island2 = prompt("You start to walk and every time you step it starts to move farther into the sand. /n -run /n keep walking").toLowerCase;
+        else if(island1 == "go to the box" || island1 == "box"){
+            var box = prompt("You start to walk and every time you step it starts to move farther into the sand. /n -run /n keep walking").toLowerCase;
         
-            if(island2 == "Run" ){
-                var island3 = prompt("You barely made it. You pushed away the sand and saw a metal trap door, you need a key.");
-            }
-            else if(island2 == "keep walking" || "walk"){
-                let island3 = prompt("You missed the box it sinked in the sand too fast.")
-            }
-        
-        
+        var boxRun 
+            
+            
+            //if(box == "run"){
+            //var box == prompt("")
         }
-       
+        }
+        //}
+    
+    
+    function Trees(){
+        //the other side of the island next to the trees, the trees have magic water from the magic water.
+        var Tree1 = prompt("There is a hole in the tree but it's too high to reach")
     }
     
     
+    
+       
+}
         
         //function Castle(){
             //var insideCastle = prompt("- upstairs \n - downstairs /n - courtyard /n - balcony /n look").toLowerCase();
@@ -151,5 +170,4 @@ function Game(){
                 //break;
               
             //}
-        }
- 
+    
