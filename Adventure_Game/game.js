@@ -92,12 +92,12 @@ function Game(){
             
             var boatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -keep it \n -leave it \n -throw it in the water").toLowerCase();
             
-    if(boat == "keep it" || "keep"){
+    if(boatLook == "keep it" || "keep"){
                 alert("You got a cloak!");
                 inventory.cloak = inventory.cloak + 1;
         Island();
     }
-    else if(boat == "leave it"){
+    else if(boatLook == "leave it"){
         alert("You left it!");
 
     }   
@@ -117,41 +117,23 @@ function Game(){
         var island1 = prompt("When you take the cloak the boat disapers and you end up on the sand. \n -go to the trees \n -go to the box").toLowerCase();
         //Go to the trees
         if(island1 == "go to the trees" || island1 == "trees"){
-            var islandTrees = prompt("You start to walk to the trees at the other side of the island You get to the first tree")
             Trees();
         }
         //They go to the box
         else if(island1 == "go to the box" || island1 == "box"){
-            var box = prompt("You start to walk and every time you step it starts to move farther into the sand. /n -run /n keep walking").toLowerCase;
-        
-        var boxRun 
-            
-            
-            //if(box == "run"){
-            //var box == prompt("")
+            var box = alert("You start to walk and every time you step it starts to move farther into the sand. You get there and realize that it's not a box it's a hole you fall down you hit the bottom and die... how sad")
+
         }
         }
-        //}
-    
     
     function Trees(){
-        //the other side of the island next to the trees, the trees have magic water from the magic water.
-        var Tree1 = prompt("There is a hole in the tree but it's too high to reach")
-    }
-    
-    
-    
-       
-}
-        
-        //function Castle(){
-            //var insideCastle = prompt("- upstairs \n - downstairs /n - courtyard /n - balcony /n look").toLowerCase();
+            var insideTrees = prompt("You get to the trees \n- brake off a branch \n -dig \n -pull off bark").toLowerCase();
             
-           // switch(insideCastle){
-                //case "upstairs":
-                   //var upstairs = prompt("You walk a long flight of stairs to the top floor of the castle.");
+           switch(insideTrees){
+                case "branch":
+                   var branch = prompt("You brake off the branch and water pours out. You drink the water and get powers. You start to fly and you fly over the water looking down you see all the creachers... good thing you didn't go swimming. You win!!!!!!!!!!!!!");
                     
-                   // Castle();
+                    Trees();
                 //break;
                // case "downstairs":
                     //prompt("You go downstairs");
@@ -170,4 +152,4 @@ function Game(){
                 //break;
               
             //}
-    
+}
