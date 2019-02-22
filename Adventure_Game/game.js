@@ -59,6 +59,10 @@ function Game(){
     
     var playerName = prompt("What is your name?");
     
+    while(!confirm("Are you sure you want "+playerName+" as a name?")){
+        playerName = prompt("What name do you want?")
+    }
+    
     alert("Welcome to the Stolen Island "+ playerName);
     
     Boat();
@@ -103,7 +107,7 @@ function Game(){
     }   
         
             else{
-                alert("I don't know what "+boat+" is!");
+
                 boat();
             }
             }
@@ -121,35 +125,35 @@ function Game(){
         }
         //They go to the box
         else if(island1 == "go to the box" || island1 == "box"){
-            var box = alert("You start to walk and every time you step it starts to move farther into the sand. You get there and realize that it's not a box it's a hole you fall down you hit the bottom and die... how sad")
 
         }
         }
     
+    
+    
     function Trees(){
-            var insideTrees = prompt("You get to the trees \n- brake off a branch \n -dig \n -pull off bark").toLowerCase();
-            
+            var insideTrees = prompt("You get to the trees \n- brake off a branch \n -dig \n -pull off bark \n -go swimming").toLowerCase();
+            //This is a game ending so you can win.
            switch(insideTrees){
-                case "branch":
-                   var branch = prompt("You brake off the branch and water pours out. You drink the water and get powers. You start to fly and you fly over the water looking down you see all the creachers... good thing you didn't go swimming. You win!!!!!!!!!!!!!");
-                    
-                    Trees();
-                //break;
-               // case "downstairs":
-                    //prompt("You go downstairs");
+                case "brake off a branch":
+                   prompt("You brake off the branch and water pours out. You drink the water and get powers. You start to fly and you fly over the water looking down you see all the creachers... good thing you didn't go swimming. You win!!!!!!!!!!!!!");
+
+                break;
+                case "dig":
+                    prompt("You dig and dig and find nothing.");
                 
-                //break;
-                //case "courtyard":
-                    //prompt("You go courtyard");
+                   Trees();
+                break;
+                case "pull off bark":
+                    prompt("You pull off the bark and see water you drink it.").toLowerCase();
+                    alert("That was poison hahaha...");
+                    break;
+                case "swimm":
+                    alert("You go swimming you fall asleep in the water and die").toLowerCase();
+
+
+                }
                 
-                //break;
-                //case "balcony":
-                    //prompt("You go balcony");
-                
-                //break;
-                //default:
-                    //alert("I don't know what "+insideCastle+" is!");
-                //break;
-              
-            //}
-}
+           }
+        
+    }
