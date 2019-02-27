@@ -45,6 +45,7 @@ var inventory = {
     glasses: 0,
     pocketNote: 1,
     log: 0,
+    Cloak: 0,
     
     
 }
@@ -53,6 +54,7 @@ Game();
 
 function Game(){
 //Island();
+//Box();
     var islandNames = ["Island"];
     
     alert("Stolen "+islandNames[0]+"!" );
@@ -87,13 +89,10 @@ function Game(){
         
             else{
                 alert("Game over!");
-            }
+                }
         }
         
-        
-        
-    else if(boat == "look in the boat" || boat == "boat"){
-            
+    if(boat == "look in the boat" || boat == "boat"){
             var boatLook = prompt("You see a cloak under the seat of the boat. When you look at it. It seems to look back. You feel it's fabric it feels like metal but it acts like fabric. \n -keep it \n -leave it \n -throw it in the water").toLowerCase();
             
     if(boatLook == "keep it" || "keep"){
@@ -103,19 +102,20 @@ function Game(){
     }
     else if(boatLook == "leave it"){
         alert("You left it!");
-
     }   
-        
             else{
-
                 boat();
             }
             }
+        
+         else{
+            alert("I don't know what"+boat+" is.")
+            
+        
+        Boat();
+        }
     }
         
-    
-      
-    
     function Island(){
       // You can only get to this if you take the cloak.  
         var island1 = prompt("When you take the cloak the boat disapers and you end up on the sand. \n -go to the trees \n -go to the box").toLowerCase();
@@ -125,35 +125,63 @@ function Game(){
         }
         //They go to the box
         else if(island1 == "go to the box" || island1 == "box"){
+            Box();
 
         }
         }
     
     
     
+    
+    function Box(){
+        var box = prompt("You get to the box and instead of a box it was a hole you fall down, as you hit the bottom water starts filling it up, and the top of the hole closes up.").toLowerCase();
+        
+        if(box == "cloak" || box == "use cloak" && inventory.cloak >= 1){
+            
+                var useCloak = confirm("You sure");
+            
+            if(useCloak){
+                
+                alert("You take out the cloak and teleport out of the hole to the trees.");
+                
+            }
+            Trees();
+        
+        }
+    }
+  
+    
     function Trees(){
-            var insideTrees = prompt("You get to the trees \n- brake off a branch \n -dig \n -pull off bark \n -go swimming").toLowerCase();
+            var insideTrees = prompt("You get to the trees. You see a hill farther away. \n- brake off a branch \n -dig \n -pull off bark \n -go swimming \n -go to hill").toLowerCase();
             //This is a game ending so you can win.
            switch(insideTrees){
                 case "brake off a branch":
-                   prompt("You brake off the branch and water pours out. You drink the water and get powers. You start to fly and you fly over the water looking down you see all the creachers... good thing you didn't go swimming. You win!!!!!!!!!!!!!");
+                   alert("You brake off the branch and water pours out. You drink the water and get powers. You start to fly and you fly over the water looking down you see all the creatures... good thing you didn't go swimming. You win!!!!!!!!!!!!!");
 
                 break;
                 case "dig":
-                    prompt("You dig and dig and find nothing.");
+                    alert("You dig and dig and find nothing.");
                 
                    Trees();
                 break;
                 case "pull off bark":
                     prompt("You pull off the bark and see water you drink it.").toLowerCase();
                     alert("That was poison hahaha...");
+                   
                     break;
-                case "swimm":
-                    alert("You go swimming you fall asleep in the water and die").toLowerCase();
-
+                case "swim":
+                    alert("You go swimming, fall asleep in the water, and die!").toLowerCase();
+                   
+                   break;
+               case "hill":
+                   alert("You go to the hill").toLowerCase();
+                   Hill();
 
                 }
                 
            }
+    function Hill(){
+        var hill = prompt("").toLowerCase();
+    }
         
     }
