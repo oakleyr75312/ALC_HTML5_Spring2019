@@ -128,10 +128,15 @@ function Game(){
             Box();
 
         }
+        
+        else{
+            alert("I don't know what"+island1+" is.")
+            
+         
+        Island();
         }
-    
-    
-    
+        
+        }
     
     function Box(){
         var box = prompt("You get to the box and instead of a box it was a hole you fall down, as you hit the bottom water starts filling it up, and the top of the hole closes up.").toLowerCase();
@@ -148,9 +153,14 @@ function Game(){
             Trees();
         
         }
+        else{
+            alert("I don't know what"+box+" is.")
+            
+        
+        Box();
+        }
     }
   
-    
     function Trees(){
             var insideTrees = prompt("You get to the trees. You see a hill farther away. \n- brake off a branch \n -dig \n -pull off bark \n -go swimming \n -go to hill").toLowerCase();
             //This is a game ending so you can win.
@@ -176,12 +186,34 @@ function Game(){
                case "hill":
                    alert("You go to the hill").toLowerCase();
                    Hill();
+                   break;
+                   default:
+                   alert("I don't know what "+insideTrees+" is!");
+					Trees();
+                   break; 
 
                 }
                 
            }
-    function Hill(){
-        var hill = prompt("").toLowerCase();
-    }
+    
+    function hill(){
+         var hill = prompt("You walk over to the hill and see a boat. \n go to the boat \n stay").toLowerCase();
+        //Go to the trees
+        if(hill == "boat" || hill == "go to the boat"){
+        alert("You get on the boat and start to leave the island. YOU WIN!!!!!")
+        }
         
+        //They go to the box
+        else if(hill == "stay"){
+            Game();
+        }
+        
+        else{
+            alert("I don't know what"+hill+" is.")
+            
+         
+        Hill();
+        }
+        
+        }
     }
