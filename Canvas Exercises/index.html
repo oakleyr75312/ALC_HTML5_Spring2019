@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <canvas id="myCanvas" width="1000" height="900" style="border:2px solid #000000;background-color:rgb(155, 208, 204)">
+            
+        </canvas>
+        
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "rgb(0, 24, 211)";
+            //X,Y,Width,Height
+            ctx.fillRect(300,100,75,75);
+            
+            ctx.moveTo(400,150)
+            ctx.lineTo(700,300);
+            ctx.stroke();
+            
+            ctx.moveTo(400,150)
+            ctx.lineTo(400,300);
+            ctx.stroke();
+            
+            ctx.moveTo(400,300)
+            ctx.lineTo(700,300);
+            ctx.stroke();
+            
+            ctx.moveTo(700,150)
+            ctx.lineTo(700,300);
+            ctx.stroke();
+            
+            ctx.moveTo(700,150)
+            ctx.lineTo(400,300);
+            ctx.stroke();
+            
+            ctx.moveTo(400,150)
+            ctx.lineTo(700,150);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.arc(50,500,50,0,2*Math.PI);
+            ctx.stroke();
+            
+            var grd = ctx.createLinearGradient(0,0,200,0);
+            grd.addColorStop(0,"rgb(155, 208, 204)");
+            grd.addColorStop(1,"rgb(0, 77, 71)");
+            
+            ctx.fillStyle = grd;
+            ctx.fillRect(10,10,160,300);
+            
+            var grd2 = ctx.createRadiantGradient(75,50,5,90,60,100);
+            grd2.addColorStop(0,"red");
+            grd2.addColorStop(1,"white");
+            
+            ctx.fillStyle = grd2;
+            ctx.fillRect(10,10,150,80);
+            
+        </script>
+    
+    </body>
+</html>
