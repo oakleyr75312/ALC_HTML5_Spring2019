@@ -8,12 +8,20 @@ html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,header,footer,nav{
 
 /* Universal Style */
 body{
-    background-color:#00d3bb;
+    background-color:#48ddc0;
 }
 div#container{
     width:100%;
     text-align: center;
-    background-color:#6dffd8
+    background-color:#ffffff
+}
+
+header img#applogo{
+/*
+    display: block;
+    margin: auto;
+*/
+
 }
 
 header{
@@ -24,8 +32,10 @@ header{
 
 header h1{
     color: #ffffff;
+    text-align: center;
     font-family: 'Nosifer', cursive;
     font-size: 2.6em;
+    text-align: center;
     
 }
 
