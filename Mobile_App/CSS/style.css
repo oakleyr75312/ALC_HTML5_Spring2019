@@ -33,7 +33,7 @@ header{
 header h1{
     color: #ffffff;
     text-align: center;
-    font-family: 'Nosifer', cursive;
+    font-family: ;
     font-size: 2.6em;
     text-align: center;
     
@@ -43,6 +43,9 @@ div#content{
     width:100%;
     background-color: #59ffcb;
     font-size: 1.5em;
+}
+img#applogo{
+   width: 100px 
 }
 /*
 
